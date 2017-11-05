@@ -42,38 +42,40 @@
   <header id="header" class="hoc clear"> 
     <!-- ################################################################################################ -->
     <div id="logo" class="fl_left">
-      <h1><a href="index.html">Gestpio</a></h1>
-      <i class="fa fa-map-o"></i>
-      <p>Dapibus metus proin</p>
+      <h1><a href="default.aspx">Utah State University</a></h1>
+        <p>Aggie Ice Cream || Creamery Cafe</p>
+     <i class="fa fa-map-o"></i>
+      
     </div>
     <!-- ################################################################################################ -->
     <nav id="mainav" class="fl_right">
       <ul class="clear">
-        <li class="active"><a href="index.html">Home</a></li>
-        <li><a class="drop" href="#">Pages</a>
-          <ul>
-            <li><a href="pages/gallery.html">Gallery</a></li>
-            <li><a href="pages/full-width.html">Full Width</a></li>
-            <li><a href="pages/sidebar-left.html">Sidebar Left</a></li>
-            <li><a href="pages/sidebar-right.html">Sidebar Right</a></li>
-            <li><a href="pages/basic-grid.html">Basic Grid</a></li>
-          </ul>
+        <li class="active">
+            <asp:HyperLink ID="Home" runat="server" NavigateUrl="~/Default.aspx">Home</asp:HyperLink>
         </li>
-        <li><a class="drop" href="#">Dropdown</a>
+         <li><a class="drop" href="#">About Us</a>
           <ul>
-            <li><a href="#">Level 2</a></li>
-            <li><a class="drop" href="#">Level 2 + Drop</a>
+            <li><a href="#">Flavors</a></li>
+              <li><a href="#">Reviews</a></li>
+              <li><a href="#">Locations</a></li>
+              <li><a href="#">Events</a></li>
+            <%--<li><a class="drop" href="#">Level 2 + Drop</a>
               <ul>
                 <li><a href="#">Level 3</a></li>
                 <li><a href="#">Level 3</a></li>
                 <li><a href="#">Level 3</a></li>
               </ul>
-            </li>
-            <li><a href="#">Level 2</a></li>
+            </li>--%>
           </ul>
         </li>
-        <li><a href="#">Link Text</a></li>
-        <li><a href="#">Link Text</a></li>
+        <li><div class="drop"></div><a class="drop" href="#">Ordering</a>
+          <ul>
+            <li><asp:HyperLink ID="Single" runat="server" NavigateUrl="~/SingleOrder.aspx">Single Orders</asp:HyperLink></li>
+            <li><asp:HyperLink ID="Bulk" runat="server" NavigateUrl="~/BulkOrder.aspx">Bulk Orders</asp:HyperLink></li>
+            <li><asp:HyperLink ID="Cater" runat="server" NavigateUrl="~/Catering.aspx">Catering</asp:HyperLink></li>
+          </ul>
+        </li>
+        <li><a href="Contact.aspx">Contact Us</a></li>
       </ul>
     </nav>
     <!-- ################################################################################################ -->
@@ -88,40 +90,37 @@
   <footer id="footer" class="hoc clear"> 
     <!-- ################################################################################################ -->
     <div class="one_third first">
-      <h6 class="title">Tincidunt orci porttitor</h6>
+      <h6 class="title">Where To Find Us</h6>
       <ul class="nospace linklist contact">
         <li><i class="fa fa-map-marker"></i>
           <address>
-          Street Name &amp; Number, Town, Postcode/Zip
+          Nutrition, Dietetics, and Food Sciences Building <br />
+          750 North 1200 East <br />
+          Logan, UT 84322-3500
           </address>
         </li>
-        <li><i class="fa fa-phone"></i> +00 (123) 456 7890<br>
-          +00 (123) 456 7890</li>
-        <li><i class="fa fa-fax"></i> +00 (123) 456 7890</li>
-        <li><i class="fa fa-envelope-o"></i> info@domain.com</li>
+        <li><i class="fa fa-phone"></i> (435) 123 4567</li>
+        <li><i class="fa fa-envelope-o"></i> aggieicecream@aggie.usu.edu</li>
       </ul>
     </div>
     <div class="one_third">
-      <h6 class="title">efficitur ligula vitae</h6>
+      <h6 class="title">What's Going On</h6>
       <ul class="nospace linklist">
-        <li><a href="#">Suscipit arcu quisque quis ultrices</a></li>
-        <li><a href="#">Quam lorem ipsum dolor sit amet</a></li>
-        <li><a href="#">Consectetur adipiscing elit vestibulum</a></li>
-        <li><a href="#">Vulputate elit turpis quis porta nibh</a></li>
-        <li><a href="#">In duis consectetur luctus neque sed</a></li>
-      </ul>
+        <li><a href="#">Events</a></li>
+        <li><a href="#">Coupons</a></li>
+     </ul> <br />
+        <i class="fa fa-facebook-official"></i><a href="#"></a> &nbsp;
+        <i class="fa fa-instagram"></i><a href="#"></a> &nbsp;
+        <i class="fa fa-twitter-square "></i><a href="#"></a>
+
     </div>
     <div class="one_third">
-      <h6 class="title">Dapibus metus maecenas</h6>
-      <p class="btmspace-30">Neque urna a nisl suspendisse potenti proin id lectus eget.</p>
-      <form method="post" action="#">
-        <fieldset>
-          <legend>Newsletter:</legend>
-          <input class="btmspace-15" type="text" value="" placeholder="Name">
-          <input class="btmspace-15" type="text" value="" placeholder="Email">
-          <button type="submit" value="submit">Submit</button>
-        </fieldset>
-      </form>
+      <h6 class="title">Sign Up</h6>
+      <p class="btmspace-30">We send out monthly coupons and more fun info about the best ice cream in the valley!</p>
+        <asp:TextBox ID="txtName" runat="server">Name</asp:TextBox> <br />
+        <asp:TextBox ID="txtEmail" runat="server">Email</asp:TextBox> <br />
+        <asp:Button ID="btnCoupon" runat="server" Text="Submit" />
+      </>
     </div>
     <!-- ################################################################################################ -->
   </footer>
@@ -130,7 +129,7 @@
         <div class="wrapper row5">
   <div id="copyright" class="hoc clear"> 
     <!-- ################################################################################################ -->
-    <p class="fl_left">Copyright &copy; 2016 - All Rights Reserved - <a href="#">Domain Name</a></p>
+    <p class="fl_left">Copyright &copy; 2016 - All Rights Reserved - <a href="#"> USU | Aggie Ice Cream</a></p>
     <p class="fl_right">Template by <a target="_blank" href="http://www.os-templates.com/" title="Free Website Templates">OS Templates</a></p>
     <!-- ################################################################################################ -->
   </div>
