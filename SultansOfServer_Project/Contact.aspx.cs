@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -22,6 +23,8 @@ public partial class Contact : System.Web.UI.Page
         lblContactLN.Visible = false;
         lblContactEmail.Visible = false;
         lblContactMessage.Visible = false;
-        lblContactSubmit.Text = "Thank you for contacting us " + txtContactFN + ". If necessary, we will get back to you within 2-3 days.";
+        lblContactSubmit.Text = "Thank you for contacting us " + txtContactFN.Text + ". If necessary, we will get back to you within 2-3 days.";
+
+
     }
 }
