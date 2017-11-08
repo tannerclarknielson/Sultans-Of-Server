@@ -10,7 +10,7 @@
            <table>
                <tr id="itemPlaceHolder" runat="server"></tr>
                <tr>
-                   <td colspan="3"> </td>
+                   <td> </td>
                </tr>
            </table>
                
@@ -21,12 +21,13 @@
                 <table>
                     <tr>
                         <td>
-                            <asp:Image ID="Image1" runat="server" ImageUrl="'<%# Eval("prod_image", "Images/t{0} %>"/>
+                            <asp:Image ID="Image1" runat="server" ImageUrl='<%# Eval("prod_image", "~/Images/{0}.jpg") %>'/>
                         </td>
                         <td>
-                            <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+                            
+                            <asp:Label ID="Label1" runat="server" Text='<%# Eval("prod_name") %>'></asp:Label>
                         <br />
-                        <asp:Label ID="Label2" runat="server" Text="Label"></asp:Label>
+                        <asp:Label ID="Label2" runat="server" Text='<%# Eval("prod_price", "{0:c}") %>'></asp:Label>
                         <br />
                             <asp:Button ID="Button1" runat="server" Text="Order Now" />
                         </td>
