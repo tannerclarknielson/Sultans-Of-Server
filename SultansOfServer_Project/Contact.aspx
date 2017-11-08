@@ -15,7 +15,7 @@
     <asp:TextBox ID="txtContactEmail" runat="server" TextMode="Email"></asp:TextBox> <br />
     <asp:Label ID="lblContactMessage" runat="server" Text="Message/Inquiry"></asp:Label>
     <asp:TextBox ID="txtContactMessage" runat="server" TextMode="MultiLine" Height="200px" Width="500px"></asp:TextBox> <br />
-    <asp:Button ID="btnContactSubmit" runat="server" OnClick="btnContactSubmit_Click" Text="Submit" /><br />
+    <asp:Button ID="btnContactSubmit" runat="server" Text="Submit" OnPreRender="btnContactSubmit_PreRender" OnClick="btnContactSubmit_Click" /><br />
 
     <asp:Label ID="lblContactSubmit" runat="server"></asp:Label>
 
