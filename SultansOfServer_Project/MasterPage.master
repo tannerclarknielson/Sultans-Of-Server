@@ -26,13 +26,13 @@
       </ul>
     </div>
     <div class="fl_right">
-      <form class="clear" method="post" action="#">
+      <div class="clear">
         <fieldset>
           <legend>Search:</legend>
           <input type="search" value="" placeholder="Search Here&hellip;">
           <button class="fa fa-search" type="submit" title="Search"><em>Search</em></button>
         </fieldset>
-      </form>
+      </div>
     </div>
     <!-- ################################################################################################ -->
   </div>

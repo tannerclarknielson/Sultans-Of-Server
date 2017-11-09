@@ -17,12 +17,11 @@ public partial class Contact : System.Web.UI.Page
     }
 
 
-   
+  
 
-    protected void btnContactSubmit_PreRender(object sender, EventArgs e)
+    protected void btnContactSubmit_Click(object sender, EventArgs e)
     {
-       
-       
+    
 
         string insertSQL = "INSERT INTO contact (con_firstname, con_lastname, con_email, con_message)";
         insertSQL += "VALUES (@con_firstname, @con_lastname, @con_email, @con_message)";
@@ -41,7 +40,7 @@ public partial class Contact : System.Web.UI.Page
         {
             con.Open();
             added = cmd.ExecuteNonQuery(); //use for insert, update, delete commands
-            lblContactSubmit.Text = added.ToString() + " record inserted." + "Thank you for contacting us " + txtContactFN.Text + ". If necessary, we will get back to you within 2-3 days.";
+            lblContactSubmit.Text = "Thank you for contacting us " + txtContactFN.Text + "! If necessary, we will get back to you by " + DateTime.Today.AddDays(3);
         }
         catch (Exception err)
         {
@@ -52,17 +51,7 @@ public partial class Contact : System.Web.UI.Page
         {
             con.Close();
         }
-    }
 
-    protected void btnContactSubmit_Click(object sender, EventArgs e)
-    {
-        txtContactFN.Visible = false;
-        txtContactLN.Visible = false;
-        txtContactEmail.Visible = false;
-        txtContactMessage.Visible = false;
-        lblContactFN.Visible = false;
-        lblContactLN.Visible = false;
-        lblContactEmail.Visible = false;
-        lblContactMessage.Visible = false;
+        Panel1.Visible = false;
     }
 }
