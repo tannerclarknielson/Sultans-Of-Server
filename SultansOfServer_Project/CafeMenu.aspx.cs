@@ -12,5 +12,11 @@ public partial class CafeMenu : System.Web.UI.Page
 
     }
 
- 
+
+
+    protected void Button1_Click(object sender, EventArgs e)
+    {
+        
+        
+    }
 }

@@ -17,11 +17,12 @@
         </LayoutTemplate>
        
         <ItemTemplate>
+            <div class="col-sm-4">
             <td>
                 <table>
                     <tr>
                         <td>
-                            <asp:Image ID="Image1" runat="server" ImageUrl='<%# Eval("prod_image", "~/Images/{0}.jpg") %>'/>
+                            <asp:Image ID="Image1" runat="server" ImageUrl='<%# Eval("prod_image", "Images/{0}") %>'/>
                         </td>
                         <td>
                             
@@ -29,11 +30,12 @@
                         <br />
                         <asp:Label ID="Label2" runat="server" Text='<%# Eval("prod_price", "{0:c}") %>'></asp:Label>
                         <br />
-                            <asp:Button ID="Button1" runat="server" Text="Order Now" />
+                            <asp:Button ID="Button1" runat="server" Text="Order Now" OnClick="Button1_Click"/>
                         </td>
                     </tr>
                 </table>
             </td>
+                </div>
         </ItemTemplate>
 
     </asp:ListView>
