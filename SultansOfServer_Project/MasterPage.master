@@ -55,7 +55,8 @@
         </li>
          <li><a class="drop" href="#">About Us</a>
           <ul>
-            <li><a href="#">Flavors</a></li>
+            <li><a href="Flavors.aspx">Flavors</a></li>
+              <li><a href="NewFlavor.aspx">New Flavors</a></li>
               <li><a href="#">Reviews</a></li>
               <li><a href="#">Locations</a></li>
               <li><a href="#">Events</a></li>
