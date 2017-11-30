@@ -5,7 +5,7 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
- <h1>Flavors</h1>
+    <h1>Flavors</h1>
 <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:5050_sultans_serverConnectionString %>" SelectCommand="SELECT [FlavorID], [Flavor], [Ingredients], [ImagePath] FROM [Flavors]"></asp:SqlDataSource>
    
 <asp:ListView ID="ListView1" runat="server" DataSourceID="SqlDataSource1" DataKeyName="FlavorID">
