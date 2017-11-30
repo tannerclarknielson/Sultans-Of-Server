@@ -5,17 +5,21 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="Data Source=stairway.usu.edu;Initial Catalog=5050_sultans_server;Persist Security Info=True;User ID=5050_sultans_server;Password=aggieicecream" ProviderName="System.Data.SqlClient" SelectCommand="SELECT [prod_id], [prod_name], [prod_price], [prod_image] FROM [cafemenu]"></asp:SqlDataSource>
     <br />
-    <asp:ListView ID="ListView1" runat="server" DataSourceID="SqlDataSource1">
+    <asp:ListView ID="ListView1" runat="server" DataSourceID="SqlDataSource1" GroupItemCount="3">
         <LayoutTemplate>
            <table>
-               <tr id="itemPlaceHolder" runat="server"></tr>
+               <tr id="groupPlaceHolder" runat="server"></tr>
                <tr>
                    <td> </td>
                </tr>
            </table>
                
         </LayoutTemplate>
-       
+        <GroupTemplate>
+                    <tr>
+                        <td id="itemPlaceHolder" runat="server"></td>
+                    </tr>
+                </GroupTemplate>
         <ItemTemplate>
             <div class="col-sm-4">
             <td>
