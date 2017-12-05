@@ -6,15 +6,23 @@
 
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:5050_sultans_serverConnectionString %>" SelectCommand="SELECT * FROM [contact]"></asp:SqlDataSource>
     <h1 class="underlined">Responses</h1>
-    <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" DataSourceID="SqlDataSource1" AutoGenerateColumns="False" DataKeyNames="con_id">
+    <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" DataSourceID="SqlDataSource1" AutoGenerateColumns="False" DataKeyNames="con_id" CellSpacing="5">
         <Columns>
-            <asp:BoundField DataField="con_id" HeaderText="con_id" InsertVisible="False" ReadOnly="True" SortExpression="con_id" Visible="false" DataFormatString="{0:d}" />
+            <asp:BoundField DataField="con_id" HeaderText="ID" InsertVisible="False" ReadOnly="True" SortExpression="con_id" Visible="false" DataFormatString="{0:d}" />
             <asp:BoundField DataField="con_date" HeaderText="Submitted" SortExpression="con_date" />
             <asp:BoundField DataField="con_firstname" HeaderText="First Name"/>
             <asp:BoundField DataField="con_lastname" HeaderText="Last Name"/>
             <asp:BoundField DataField="con_email" HeaderText="Email" SortExpression="con_email" />
             <asp:BoundField DataField="con_message" HeaderText="Message"/>
         </Columns>
+
+
+
+        <EditRowStyle BorderColor="#000066" />
+
+
+
+        <HeaderStyle VerticalAlign="Middle" />
 
 
 
