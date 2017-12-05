@@ -46,5 +46,8 @@ public partial class NewFlavor : System.Web.UI.Page
         {
             con.Close();
         }
+
+        Label7.Visible = false;
+        Panel1.Visible = false;
     }
 }

@@ -91,9 +91,10 @@
             <nav class="navbar navbar-default" role="navigation">
                <div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navigation-collapse"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button></div>
                <div class="collapse navbar-collapse" id="main-navigation-collapse">
-                  <ul class="nav navbar-nav"><li><a href="/index.php"><img src="/Images/ice-cream-home-button2.png" alt="ice cream symbol" height="22px"/></a></li>
-<li><a href="/what-we-do/ice_cream/ice-cream.php">Ice Cream</a></li>
-<li><a href="/what-we-do/creamery-cafe/menu.php">Creamery Cafe</a></li>
+                  <ul class="nav navbar-nav">
+                      <li><a href="Default.aspx" runat="server"><img src="/Images/ice-cream-home-button2.png" alt="ice cream symbol" height="22px"/></a></li>
+<li><a href="Flavors.aspx" runat="server">Flavors</a>"></li>
+<li><a href="CafeMenu.aspx" runat="server">Creamery Cafe</a></li>
 <li><a href="http://usu-aggie-ice-cream.mybigcommerce.com/?ctk=LPHrykkpH7jIdQnfKQNsVTc8VEzuodQah0Re0xABZ4fe">NEW! Buy Aggie Cheese Boxes</a></li>
 
 <!-- <li class="dropdown yamm-fw"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Who We Are <i class="fa fa-chevron-down"></i></a>
@@ -176,17 +177,18 @@
 	</ul>
 </li> -->
 
-<li><a href="/contact-us/customer-service.php">Contact Us</a></li>
+<li><a href="Contact.aspx" runat="server">Contact Us</a></li>
+<li><a href="NewFlavor.aspx">New Flavors</a></li>
 <li><a href="/contact-us/donations.php">Donations</a></li>
 
-<!-- <li class="dropdown yamm"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Contact Us </a>
+<li class="dropdown yamm"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Admin </a>
 	<ul class="dropdown-menu">
-		<li><a href="/contact-us/customer-service.php">Customer Service</a></li>
-		<li><a href="/contact-us/donations.php">Donations</a></li>
+		<li><a href="AdminNewFlavor.aspx" runat="server">New Flavor Ideas</a></li>
+		<li><a href="ContactResponses.aspx" runat="server">Contact Responses</a></li>
 		<li><a href="/contact-us/links-friends.php">Links To Our Friends</a></li>
 		<li><a href="/contact-us/policies.php">Policies</a></li>
 	</ul>
-</li> -->
+</li> 
 
 <!-- <li><a href="/vendor-login.php">Vendor Login</a></li> --></ul>
                   <ul class="nav navbar-nav navbar-right"></ul>

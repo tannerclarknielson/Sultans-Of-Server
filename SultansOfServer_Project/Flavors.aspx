@@ -18,7 +18,7 @@
             
         <ItemTemplate>
             <div class="col-sm-4">
-                <asp:Image ID="Image1" runat="server" ImageUrl='<%# Eval("ImagePath") %>' />
+                <asp:Image ID="Image1" runat="server" ImageUrl='<%# Eval("ImagePath", "/Flavors/{0}") %>' />
                 <%-- <asp:Image ID="Image1" runat="server" ImageUrl='<%# Eval("ImagePath", "SultansOfServer_Project/Images/Flavors/{0}") %>' />--%>
                  <h2><%# Eval("Flavor") %></h2>
                  <p>Ingredients: <%# Eval("Ingredients") %></p>
