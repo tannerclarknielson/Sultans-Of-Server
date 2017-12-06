@@ -31,27 +31,36 @@
                     <asp:LinkButton ID="btnDelete" runat="server" CommandName="Delete">X</asp:LinkButton>
                 </td>
                 <td>
-                    <asp:Image ID="Image1" runat="server" ImageUrl='<%# Eval("prod_image", "Images/{0}") %>'/>
+                    <asp:Image ID="Image1" runat="server" ImageUrl='<%# Eval("Image", "Images/{0}") %>'/>
                 </td>
                 <td>
-                    <asp:Label ID="Label1" runat="server" Text='<%# Eval("prod_name") %>'></asp:Label>
+                    <asp:Label ID="Label1" runat="server" Text='<%# Eval("Name") %>'></asp:Label>
                 </td>
                 <td>
-                    <asp:Label ID="Label2" runat="server" Text='<%# Eval("prod_price", "{0:c}") %>'></asp:Label>
+                    <asp:Label ID="Label2" runat="server" Text='<%# Eval("Price", "{0:c}") %>'></asp:Label>
                 </td>
                 <td>
                     <asp:TextBox ID="txtQty" runat="server" type="number" size="4" OnTextChanged="txtQty_TextChanged" title="Qty" value="1" min="0" step="1" Text='<%# Bind("Quantity") %>' AutoPostBack="true"></asp:TextBox>
                     <asp:Button ID="btnQty" Visible="false" runat="server" Text="Update Quantity" CommandName="Update" />
                 </td>
                 <td>
-                    <asp:Label ID="Label3" runat="server" Text='<%# Eval("totalAmount", "{0:c}") %>'></asp:Label>
+                    <asp:Label ID="Label3" runat="server" Text='<%# Eval("ExtendedPrice", "{0:c}") %>'></asp:Label>
                 </td>
             </tr>
         </ItemTemplate>
 
-
-
     </asp:ListView>
+
+    <table cellspacing="0">
+        <tbody>
+
+            <tr>
+                <th>Order Total</th>
+                <td class="amount"><strong>
+                    <asp:Label ID="Total" runat="server"></asp:Label></strong></td>
+            </tr>
+        </tbody>
+    </table>
    
 
 </asp:Content>
