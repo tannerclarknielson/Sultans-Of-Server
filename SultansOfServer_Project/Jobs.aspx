@@ -3,31 +3,21 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+    <div class="col-6-md">
 
-    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:5050_sultans_serverConnectionString %>" DeleteCommand="DELETE FROM [Jobs] WHERE [Id] = @Id" InsertCommand="INSERT INTO [Jobs] ([jobID], [jobName], [jobDescription]) VALUES (@jobID, @jobName, @jobDescription)" SelectCommand="SELECT [Id], [jobID], [jobName], [jobDescription] FROM [Jobs]" UpdateCommand="UPDATE [Jobs] SET [jobID] = @jobID, [jobName] = @jobName, [jobDescription] = @jobDescription WHERE [Id] = @Id">
-        <DeleteParameters>
-            <asp:Parameter Name="Id" Type="Int32" />
-        </DeleteParameters>
-        <InsertParameters>
-            <asp:Parameter Name="jobID" Type="String" />
-            <asp:Parameter Name="jobName" Type="String" />
-            <asp:Parameter Name="jobDescription" Type="String" />
-        </InsertParameters>
-        <UpdateParameters>
-            <asp:Parameter Name="jobID" Type="String" />
-            <asp:Parameter Name="jobName" Type="String" />
-            <asp:Parameter Name="jobDescription" Type="String" />
-            <asp:Parameter Name="Id" Type="Int32" />
-        </UpdateParameters>
-    </asp:SqlDataSource>
 
-    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" CellSpacing="2" DataKeyNames="Id" DataSourceID="SqlDataSource1" ForeColor="Black" AllowPaging="True">
+    
+    <asp:GridView ID="gvJobs" runat="server" AutoGenerateColumns="False" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" CellSpacing="2" DataKeyNames="Id" ForeColor="Black" AllowPaging="True" DataSourceID="SqlDataSource1" OnRowUpdating="GridView1_RowUpdating">
         <Columns>
-            <asp:CommandField ShowEditButton="True"/>
-             <asp:CommandField ShowSelectButton="True"/>
-            <asp:BoundField DataField="jobID" HeaderText="jobID" SortExpression="jobID" />
+            <asp:CommandField ShowSelectButton="True"/>
             <asp:BoundField DataField="jobName" HeaderText="jobName" SortExpression="jobName" />
             <asp:BoundField DataField="jobDescription" HeaderText="jobDescription" SortExpression="jobDescription" />
+            <asp:CommandField ShowEditButton="True"/>
+            <asp:TemplateField ShowHeader="False">
+                <ItemTemplate>
+                    <asp:LinkButton ID="LinkButton1" runat="server" CausesValidation="False" CommandName="Delete" Text="Delete" OnClientClick="return confirm('Delete Job?')"></asp:LinkButton>
+                </ItemTemplate>
+            </asp:TemplateField>
         </Columns>
         <FooterStyle BackColor="#CCCCCC" />
         <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
@@ -39,5 +29,27 @@
         <SortedDescendingCellStyle BackColor="#CAC9C9" />
         <SortedDescendingHeaderStyle BackColor="#383838" />
     </asp:GridView>
+
+    </div>
+
+<asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:5050_sultans_serverConnectionString %>" DeleteCommand="DELETE FROM [Jobs] WHERE [Id] = @Id" InsertCommand="INSERT INTO [Jobs] ([jobName], [jobDescription], [datePosted]) VALUES (@jobName, @jobDescription, @datePosted)" SelectCommand="SELECT [jobName], [jobDescription], [Id], [datePosted] FROM [Jobs]" UpdateCommand="UPDATE [Jobs] SET [jobName] = @jobName, [jobDescription] = @jobDescription, [datePosted] = @datePosted WHERE [Id] = @Id">
+    <DeleteParameters>
+        <asp:Parameter Name="Id" Type="Int32" />
+    </DeleteParameters>
+    <InsertParameters>
+        <asp:Parameter Name="jobName" Type="String" />
+        <asp:Parameter Name="jobDescription" Type="String" />
+        <asp:Parameter Name="datePosted" Type="DateTime" />
+    </InsertParameters>
+    <UpdateParameters>
+        <asp:Parameter Name="jobName" Type="String" />
+        <asp:Parameter Name="jobDescription" Type="String" />
+        <asp:Parameter Name="datePosted" Type="DateTime" />
+        <asp:Parameter Name="Id" Type="Int32" />
+    </UpdateParameters>
+</asp:SqlDataSource>
+    <br />
+    <asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton1_Click">Add new Job</asp:LinkButton>
+    <br />
 </asp:Content>
 
