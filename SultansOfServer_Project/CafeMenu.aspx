@@ -8,43 +8,41 @@
         <h1 class="underlined">Creamery Cafe </h1>
              <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="Data Source=stairway.usu.edu;Initial Catalog=5050_sultans_server;Persist Security Info=True;User ID=5050_sultans_server;Password=aggieicecream" ProviderName="System.Data.SqlClient" SelectCommand="SELECT [prod_id], [prod_name], [prod_price], [prod_image] FROM [cafemenu]"></asp:SqlDataSource>
     <br />
-    <asp:ListView ID="ListView1" runat="server" DataKeyNames="prod_id" DataSourceID="SqlDataSource1" GroupItemCount="3" OnSelectedIndexChanged="ListView1_SelectedIndexChanged" >
+    <asp:ListView ID="ListView1" runat="server" DataKeyNames="prod_id" DataSourceID="SqlDataSource1" OnSelectedIndexChanged="ListView1_SelectedIndexChanged" >
         <LayoutTemplate>
-           <table>
+            <div class="row">
+                <div runat="server" id="itemPlaceHolder"></div>
+            </div>
+
+           <%--<table>
                <tr id="groupPlaceHolder" runat="server"></tr>
                <tr>
                    <td> </td>
                </tr>
-           </table>
+           </table>--%>
                
         </LayoutTemplate>
-        <GroupTemplate>
+       <%-- <GroupTemplate>
                     <tr>
                         <td id="itemPlaceHolder" runat="server"></td>
                     </tr>
-                </GroupTemplate>
+                </GroupTemplate>--%>
         <ItemTemplate>
-            <div class="col-sm-3">
-            <td>
-                <table>
-                    <tr>
-                        <td>
-                            <asp:Image ID="Image1" runat="server" ImageUrl='<%# Eval("prod_image", "Images/{0}") %>'/>
-                        </td>
-                        <td align="center">
-                            <h4 class="card-title">
-                            <asp:Label ID="Label1"  runat="server" Text='<%# Eval("prod_name") %>'></asp:Label> </h4>
+            <div class="col-sm-4 col-xs-6">
+                <div class="row">
+                    <div class="col-sm-6">
+                         <asp:Image ID="Image1" runat="server" ImageUrl='<%# Eval("prod_image", "Images/{0}") %>' style="display:block;margin-left:auto;margin-right:auto;"/>
+                    </div>
+                    <div class="col-sm-6">
+                        <h4 class="card-title" style="text-align:center;"><asp:Label ID="Label1"  runat="server" Text='<%# Eval("prod_name") %>'></asp:Label></h4>
+                        <p style="text-align:center;"><asp:Label ID="Label2" runat="server" Text='<%# Eval("prod_price", "{0:c}") %>'></asp:Label></p>
                         <br />
-                        <asp:Label ID="Label2" runat="server" Text='<%# Eval("prod_price", "{0:c}") %>'></asp:Label>
-                        <br />
-                            <asp:Button ID="Button1" runat="server" Text="Add To Cart" CommandName="Select"/>
-                            <br /> <br />
-                        </td>
-                    </tr>
-                    <br />
-                </table>
-            </td>
+                        <p style="text-align:center;">
+                        <asp:Button ID="Button1" runat="server" Text="Add To Cart" CommandName="Select"/>
+                        </p>
+                    </div>
                 </div>
+            </div>
 
             <asp:HiddenField ID="hf_id" runat="server" Value='<%# Eval("prod_id") %>'/>
             <asp:HiddenField ID="hf_name" runat="server" Value='<%# Eval("prod_name") %>'/>
