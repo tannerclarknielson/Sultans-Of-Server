@@ -28,7 +28,8 @@ public partial class SingleOrder : System.Web.UI.Page
     protected void ListView1_ItemDeleting(object sender, ListViewDeleteEventArgs e)
     {
         //get the ID of the item to be deleted
-        string ItemID = e.Keys["ID"].ToString();
+        //string ItemID = e.Keys["ID"].ToString();
+        string ItemID = ListView1.DataKeys[e.ItemIndex].Value.ToString();
 
         //call the remove method of the cart
         SessionCart.RemoveItem(ItemID);
@@ -40,7 +41,7 @@ public partial class SingleOrder : System.Web.UI.Page
     protected void ListView1_ItemUpdating(object sender, ListViewUpdateEventArgs e)
     {
         //get the ID of the item to be updated
-        string ItemID = e.Keys["ID"].ToString();
+        string ItemID = ListView1.DataKeys[e.ItemIndex].Value.ToString();
 
         //get the new quantity
         int newQuantity = Convert.ToInt32(e.NewValues["Quantity"].ToString());
@@ -80,7 +81,7 @@ public partial class SingleOrder : System.Web.UI.Page
 
     protected void Page_PreRender(object sender, EventArgs e)
     {
-        Total.Text = String.Format("{0:c}", SessionCart.GetTotal());
+        Total.Text = String.Format("{0:c}", SessionCart.GetSubTotal());
     }
 
     //protected void ListView1_ItemCommand(object sender, ListViewCommandEventArgs e)
@@ -142,6 +143,8 @@ public partial class SingleOrder : System.Web.UI.Page
     //            con.Close();
     //        }
     //    }
-//}
+    //}
 
+
+ 
 }

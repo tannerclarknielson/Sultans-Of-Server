@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-    <asp:ListView ID="ListView1" runat="server">
+    <asp:ListView ID="ListView1" runat="server" OnItemDeleting="ListView1_ItemDeleting" DataKeyNames="ID">
         <LayoutTemplate>
             <table cellspacing="0">
                 <thead>
@@ -56,7 +56,7 @@
 
             <tr>
                 <th>Order Total</th>
-                <td class="amount"><strong>
+                <td><strong>
                     <asp:Label ID="Total" runat="server"></asp:Label></strong></td>
             </tr>
         </tbody>
