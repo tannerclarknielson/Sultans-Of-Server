@@ -66,6 +66,7 @@
                      <li><a href="http://usu.edu/azindex/">A-Z index</a></li>
                      <li><a href="http://usu.edu/myusu/">MyUSU</a></li>
                      <li><a href="http://directory.usu.edu/">Directory</a></li>
+                      <li><a href="/Account/Login.aspx">Login</a></li>
                   </ul>
                </div>
                <div class="header-support pull-right"></div>
@@ -93,100 +94,25 @@
                <div class="collapse navbar-collapse" id="main-navigation-collapse">
                   <ul class="nav navbar-nav">
                       <li><a href="Default.aspx" runat="server"><img src="/Images/ice-cream-home-button2.png" alt="ice cream symbol" height="22px"/></a></li>
-<li><a href="Flavors.aspx" runat="server">Flavors</a>"></li>
-<li><a href="CafeMenu.aspx" runat="server">Creamery Cafe</a></li>
-<li><a href="http://usu-aggie-ice-cream.mybigcommerce.com/?ctk=LPHrykkpH7jIdQnfKQNsVTc8VEzuodQah0Re0xABZ4fe">NEW! Buy Aggie Cheese Boxes</a></li>
 
-<!-- <li class="dropdown yamm-fw"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Who We Are <i class="fa fa-chevron-down"></i></a>
+                      <li class="dropdown yamm"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Flavors </a>
 	<ul class="dropdown-menu">
-		<li>
-			<div class="container">
-				<div class="yamm-content">
-					<div class="row" style="margin-bottom: 0px;">
-						<div class="col-xs-4 col-sm-4">
-							<a href="/who-we-are/about-us/about-us.php"><h2>About</h2></a>
-							<ul class="list-unstyled">
-								<li><a title="" href="/who-we-are/about-us/our-store.php">Our Store</a></li>
-								<li><a title="" href="/who-we-are/about-us/our-staff.php">Our Staff</a></li>
-								<li><a title="" href="/who-we-are/about-us/our-facility.php">Our Facility</a></li>
-							</ul>
-						</div>
-						<div class="col-xs-4 col-sm-4">
-							<a href="/who-we-are/history/history.php"><h2>History</h2></a>
-							<ul class="list-unstyled">
-								<li><a title="" href="/who-we-are/history/historic-photos.php">Historic Photos</a></li>
-							</ul>
-						</div>
-						<div class="col-xs-4 col-sm-4">
-							<a href="/who-we-are/tours/tours.php"><h2>Tours</h2></a>
-							<ul class="list-unstyled">
-								<li><a title="" href="/who-we-are/tours/cheese-tours.php">Cheese Tours</a></li>
-								<li><a title="" href="/who-we-are/tours/ice-cream-tours.php">Ice Cream Tours</a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-		</li>
+        <li><a href="~/Flavors.aspx" runat="server">Flavors</a></li>
+		<li><a href="~/NewFlavor.aspx" runat="server">Suggest New Flavor</a></li>
+		
 	</ul>
-</li> -->
+</li> 
+                     
+<li><a href="~/CafeMenu.aspx" runat="server">Creamery Cafe</a></li>
 
-<!-- <li class="dropdown yamm-fw"><a class="dropdown-toggle" href="#" data-toggle="dropdown">What We Do <i class="fa fa-chevron-down"></i></a>
-	<ul class="dropdown-menu">
-		<li>
-			<div class="container">
-				<div class="yamm-content">
-					<div class="row" style="margin-bottom: 0px;">
-						<div class="col-xs-4 col-sm-4">
-							<a href="/what-we-do/ice_cream/ice-cream.php"><h2>Ice Cream</h2></a>
-							<ul class="list-unstyled">
-								<li><a title="Flavors" href="/what-we-do/ice_cream/flavors.php">Flavors</a></li>
-								<li><a title="" href="/what-we-do/ice_cream/how-its-made.php">How Its Made</a></li>
-								<li><a title="" href="/what-we-do/ice_cream/catering.php">Catering</a></li>
-								<li><a title="" href="/what-we-do/ice_cream/faq.php">FAQ</a></li>
-							</ul>
-						</div>
-						<div class="col-xs-4 col-sm-4">
-							<a href="/what-we-do/artisan_cheese/artisan-cheese.php"><h2>Artisan Cheese</h2></a>
-							<ul class="list-unstyled">
-								<li><a title="" href="/what-we-do/artisan_cheese/gift-boxes.php">Gift Boxes</a></li>
-								<li><a title="" href="/what-we-do/artisan_cheese/individual-cuts.php">Individual Cuts</a></li>
-								<li><a title="" href="/what-we-do/artisan_cheese/how-its-made.php">How Its Made</a></li>
-							</ul>
-						</div>
-						<div class="col-xs-4 col-sm-4">
-							<a href="/what-we-do/creamery-cafe/creamery-cafe.php"><h2>Creamery Cafe</h2></a>
-							<ul class="list-unstyled">
-								<li><a title="" href="/what-we-do/creamery-cafe/catering.php">Catering</a></li>
-								<li><a title="" href="/what-we-do/creamery-cafe/menu.php">Menu</a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-		</li>
-	</ul>
-</li> -->
-
-<!-- <li class="dropdown yamm"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Where We're At </a>
-	<ul class="dropdown-menu">
-		<li><a href="/where-were-at/directions.php">Directions</a></li>
-		<li><a href="/where-were-at/cache-valley.php">Cache Valley</a></li>
-		<li><a href="/where-were-at/utah-state.php">Utah State University</a></li>
-
-	</ul>
-</li> -->
-
-<li><a href="Contact.aspx" runat="server">Contact Us</a></li>
-<li><a href="NewFlavor.aspx">New Flavors</a></li>
-<li><a href="/contact-us/donations.php">Donations</a></li>
+<li><a href="~/Contact.aspx" runat="server">Contact Us</a></li>
 
 <li class="dropdown yamm"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Admin </a>
 	<ul class="dropdown-menu">
-		<li><a href="AdminNewFlavor.aspx" runat="server">New Flavor Ideas</a></li>
-		<li><a href="ContactResponses.aspx" runat="server">Contact Responses</a></li>
-		<li><a href="/contact-us/links-friends.php">Links To Our Friends</a></li>
-		<li><a href="/contact-us/policies.php">Policies</a></li>
+		<li><a href="~/AdminNewFlavor.aspx" runat="server">New Flavor Ideas</a></li>
+		<li><a href="~/ContactResponses.aspx" runat="server">Contact Responses</a></li>
+		<li><a href="/Admin/ManageRoles.aspx">Manage Roles</a></li>
+        <li><a href="/Account/Profile.aspx">Update Profile</a></li>
 	</ul>
 </li> 
 
