@@ -11,4 +11,10 @@ public partial class MasterPage : System.Web.UI.MasterPage
     {
 
     }
+
+    protected void LoginStatus1_LoggingOut(object sender, LoginCancelEventArgs e)
+    {
+        var authenticationmanager = HttpContext.Current.GetOwinContext().Authentication;
+        authenticationmanager.SignOut();
+    }
 }

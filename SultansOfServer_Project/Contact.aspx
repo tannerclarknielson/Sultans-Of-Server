@@ -20,6 +20,7 @@
 
     <h2><asp:Label ID="lblContactEmail" runat="server" Text="Email"></asp:Label></h2>
     <asp:TextBox ID="txtContactEmail" runat="server" TextMode="Email"></asp:TextBox> <br />
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="*Email is required*" ControlToValidate="txtContactEmail" ForeColor="Red"></asp:RequiredFieldValidator>
 
     <h2><asp:Label ID="lblContactMessage" runat="server" Text="Message/Inquiry"></asp:Label></h2>
 

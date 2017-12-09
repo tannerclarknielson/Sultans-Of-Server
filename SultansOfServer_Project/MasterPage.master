@@ -66,7 +66,7 @@
                      <li><a href="http://usu.edu/azindex/">A-Z index</a></li>
                      <li><a href="http://usu.edu/myusu/">MyUSU</a></li>
                      <li><a href="http://directory.usu.edu/">Directory</a></li>
-                      <li><a href="/Account/Login.aspx">Login</a></li>
+                      <li> <asp:LoginStatus ID="LoginStatus1" runat="server" OnLoggingOut="LoginStatus1_LoggingOut" LogoutAction="RedirectToLoginPage"/> </li>
                   </ul>
                </div>
                <div class="header-support pull-right"></div>
@@ -107,14 +107,20 @@
 
 <li><a href="~/Contact.aspx" runat="server">Contact Us</a></li>
 
+<li><a href="~/SingleOrder.aspx" runat="server">Your Order</a></li>
+
+                      <asp:LoginView ID="LoginView1" runat="server">
+                      <LoggedInTemplate>
 <li class="dropdown yamm"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Admin </a>
 	<ul class="dropdown-menu">
-		<li><a href="~/AdminNewFlavor.aspx" runat="server">New Flavor Ideas</a></li>
-		<li><a href="~/ContactResponses.aspx" runat="server">Contact Responses</a></li>
-		<li><a href="/Admin/ManageRoles.aspx">Manage Roles</a></li>
-        <li><a href="/Account/Profile.aspx">Update Profile</a></li>
+		<li><a href="/Admin/AdminNewFlavor.aspx" runat="server">New Flavor Ideas</a></li>
+		<li><a href="/Admin/ContactResponses.aspx" runat="server">Contact Responses</a></li>
+		<li><a href="/Admin/ManageRoles.aspx" runat="server">Manage Roles</a></li>
+        <li><a href="/Account/Profile.aspx" runat="server">Update Profile</a></li>
 	</ul>
 </li> 
+                      </LoggedInTemplate>
+                          </asp:LoginView>
 
 <!-- <li><a href="/vendor-login.php">Vendor Login</a></li> --></ul>
                   <ul class="nav navbar-nav navbar-right"></ul>

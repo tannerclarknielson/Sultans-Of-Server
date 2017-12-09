@@ -87,22 +87,23 @@ public partial class SingleOrder : System.Web.UI.Page
     //protected void ListView1_ItemCommand(object sender, ListViewCommandEventArgs e)
     //{
     //    //Check to make sure that the Checkout button was clicked
-    //    if (e.CommandName == "Checkout")
+    //    if (e.CommandName == "Submit")
     //    {
     //        //write the order to the database
-    //        string username = User.Identity.Name; //gets username of currently logged in user
+    //   
     //        DateTime orderdate = DateTime.Now;
-    //        decimal subtotal = SessionCart.GetSubTotal();
-    //        decimal shipping = SessionCart.GetShipping();
-    //        decimal total = SessionCart.GetTotal();
+    //        
+    //        decimal total = SessionCart.GetSubTotal();
 
     //        // create a DataTable object to store the order details
     //        DataTable items = new DataTable();
 
     //        //Add appropriate columns to items DataTable
-    //        items.Columns.Add("ProductID", typeof(int));
+    //        items.Columns.Add("Item", typeof(string));
     //        items.Columns.Add("Quantity", typeof(int));
-    //        items.Columns.Add("Price", typeof(decimal));
+    //        items.Columns.Add("Total", typeof(decimal));
+    //        items.Columns.Add("CustomerName", typeof(string));
+    //        items.Columns.Add("PhoneNumber", typeof(string));
 
     //        //add Cart items to the table. Each item is a row in the table
     //        foreach (CartItem i in SessionCart.Items)
@@ -146,5 +147,38 @@ public partial class SingleOrder : System.Web.UI.Page
     //}
 
 
- 
+
+
+    //protected void btnSubmitOrder_Click(object sender, EventArgs e)
+    //{
+    //    string insertSQL = "INSERT INTO orders (con_date,con_firstname, con_lastname, con_email, con_message)";
+    //    insertSQL += "VALUES (@con_date, @con_firstname, @con_lastname, @con_email, @con_message)";
+
+    //    SqlConnection con = new SqlConnection("Data Source=stairway.usu.edu; Initial Catalog=5050_sultans_server;User ID=5050_sultans_server; Password=aggieicecream");
+    //    SqlCommand cmd = new SqlCommand(insertSQL, con);
+
+    //    SqlParameter param = new SqlParameter();
+    //    cmd.Parameters.AddWithValue("@con_date", DateTime.Now.ToShortDateString());
+    //    cmd.Parameters.AddWithValue("@con_firstname", txtContactFN.Text);
+    //    cmd.Parameters.AddWithValue("@con_lastname", txtContactLN.Text);
+    //    cmd.Parameters.AddWithValue("@con_email", txtContactEmail.Text);
+    //    cmd.Parameters.AddWithValue("@con_message", txtContactMessage.Text);
+
+    //    int added = 0;
+    //    try
+    //    {
+    //        con.Open();
+    //        added = cmd.ExecuteNonQuery(); //use for insert, update, delete commands
+    //        lblContactSubmit.Text = "Thank you for contacting us " + txtContactFN.Text + "! If necessary, we will get back to you by " + DateTime.Today.AddDays(3).ToShortDateString();
+    //    }
+    //    catch (Exception err)
+    //    {
+    //        lblContactSubmit.Text = "Error inserting record. ";
+    //        lblContactSubmit.Text += err.Message;
+    //    }
+    //    finally
+    //    {
+    //        con.Close();
+    //    }
+    //}
 }

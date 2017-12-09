@@ -51,9 +51,7 @@
         </ItemTemplate>
 
     </asp:ListView>
-        <div class="col-sm-3">
-            <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/SingleOrder.aspx">View Cart</asp:HyperLink>
-        </div>
+        
 
        
     </div>
