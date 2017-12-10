@@ -19,6 +19,8 @@
       <meta name="revisit-after" content="5 days">
       
       <link href="//ajax.googleapis.com" rel="dns-prefetch">
+
+       <link href="/layout/styles/layout.css" rel="stylesheet" type="text/css">
       		
       <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,300" rel="stylesheet" type="text/css">
       		
@@ -117,6 +119,7 @@
 		<li><a href="/Admin/ContactResponses.aspx" runat="server">Contact Responses</a></li>
 		<li><a href="/Admin/ManageRoles.aspx" runat="server">Manage Roles</a></li>
         <li><a href="/Account/Profile.aspx" runat="server">Update Profile</a></li>
+        <li><a href="/Admin/Users.aspx">All Users</a></li>
 	</ul>
 </li> 
                       </LoggedInTemplate>
