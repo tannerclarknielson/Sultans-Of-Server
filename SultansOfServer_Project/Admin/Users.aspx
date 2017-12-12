@@ -6,7 +6,7 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <h1 class="underlined">All Users</h1>
-    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:IdentityDB %>" DeleteCommand="DELETE FROM [AspNetUsers] WHERE [Id] = @Id" InsertCommand="INSERT INTO [AspNetUsers] ([Firstname], [Lastname], [Email], [PhoneNumber], [City], [State], [Id]) VALUES (@Firstname, @Lastname, @Email, @PhoneNumber, @City, @State, @Id)" SelectCommand="SELECT [Firstname], [Lastname], [Email], [PhoneNumber], [City], [State], [Id] FROM [AspNetUsers]" UpdateCommand="UPDATE [AspNetUsers] SET [Firstname] = @Firstname, [Lastname] = @Lastname, [Email] = @Email, [PhoneNumber] = @PhoneNumber, [City] = @City, [State] = @State WHERE [Id] = @Id">
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:IdentityDB %>" DeleteCommand="DELETE FROM [AspNetUsers] WHERE [Id] = @Id" InsertCommand="INSERT INTO [AspNetUsers] ([Firstname], [Lastname], [Email], [PhoneNumber], [City], [State], [Id], [UserName]) VALUES (@Firstname, @Lastname, @Email, @PhoneNumber, @City, @State, @Id, @UserName)" SelectCommand="SELECT [Firstname], [Lastname], [Email], [PhoneNumber], [City], [State], [Id], [UserName] FROM [AspNetUsers]" UpdateCommand="UPDATE [AspNetUsers] SET [Firstname] = @Firstname, [Lastname] = @Lastname, [Email] = @Email, [PhoneNumber] = @PhoneNumber, [City] = @City, [State] = @State, [UserName] = @UserName WHERE [Id] = @Id">
         <DeleteParameters>
             <asp:Parameter Name="Id" Type="String" />
         </DeleteParameters>
@@ -18,6 +18,7 @@
             <asp:Parameter Name="City" Type="String" />
             <asp:Parameter Name="State" Type="String" />
             <asp:Parameter Name="Id" Type="String" />
+            <asp:Parameter Name="UserName" Type="String" />
         </InsertParameters>
         <UpdateParameters>
             <asp:Parameter Name="Firstname" Type="String" />
@@ -26,20 +27,22 @@
             <asp:Parameter Name="PhoneNumber" Type="String" />
             <asp:Parameter Name="City" Type="String" />
             <asp:Parameter Name="State" Type="String" />
+            <asp:Parameter Name="UserName" Type="String" />
             <asp:Parameter Name="Id" Type="String" />
         </UpdateParameters>
     </asp:SqlDataSource>
 
-    <asp:GridView ID="GridViewUsers" runat="server" AutoGenerateColumns="false" DataKeyNames="Id" AllowPaging="True" AllowSorting="True" DataSourceID="SqlDataSource1" cellspacing="10" ForeColor="#333333" GridLines="None">
+    <asp:GridView ID="GridViewUsers" runat="server" AutoGenerateColumns="False" DataKeyNames="Id" AllowPaging="True" AllowSorting="True" DataSourceID="SqlDataSource1" cellspacing="10" ForeColor="#333333" GridLines="None">
         <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
         <Columns>
-            <asp:CommandField ShowDeleteButton="True" ShowEditButton="True"/>
-             <asp:BoundField DataField="Firstname" HeaderText="First Name" SortExpression="Firstname" />
-             <asp:BoundField DataField="Lastname" HeaderText="Last Name" SortExpression="Lastname" />
-             <asp:BoundField DataField="Email" HeaderText="Email" SortExpression="Email" />
-             <asp:BoundField DataField="PhoneNumber" HeaderText="Phone" SortExpression="PhoneNumber" />
-             <asp:BoundField DataField="City" HeaderText="City" SortExpression="City" />
-             <asp:BoundField DataField="State" HeaderText="State" SortExpression="State" />
+            <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" ShowSelectButton="True" />
+            <asp:BoundField DataField="UserName" HeaderText="UserName" SortExpression="UserName" />
+            <asp:BoundField DataField="Firstname" HeaderText="Firstname" SortExpression="Firstname" />
+            <asp:BoundField DataField="Lastname" HeaderText="Lastname" SortExpression="Lastname" />
+            <asp:BoundField DataField="Email" HeaderText="Email" SortExpression="Email" />
+            <asp:BoundField DataField="PhoneNumber" HeaderText="PhoneNumber" SortExpression="PhoneNumber" />
+            <asp:BoundField DataField="City" HeaderText="City" SortExpression="City" />
+            <asp:BoundField DataField="State" HeaderText="State" SortExpression="State" />
         </Columns>
         <EditRowStyle BackColor="#999999" />
         <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
