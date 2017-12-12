@@ -68,7 +68,8 @@
                      <li><a href="http://usu.edu/azindex/">A-Z index</a></li>
                      <li><a href="http://usu.edu/myusu/">MyUSU</a></li>
                      <li><a href="http://directory.usu.edu/">Directory</a></li>
-                      <li> <asp:LoginStatus ID="LoginStatus1" runat="server" OnLoggingOut="LoginStatus1_LoggingOut" LogoutAction="RedirectToLoginPage"/> </li>
+                     <li><asp:LoginStatus ID="LoginStatus1" runat="server" OnLoggingOut="LoginStatus1_LoggingOut" LogoutAction="RedirectToLoginPage"/></li>
+                     <li></li>
                   </ul>
                </div>
                <div class="header-support pull-right"></div>
@@ -97,7 +98,7 @@
                   <ul class="nav navbar-nav">
                       <li><a href="Default.aspx" runat="server"><img src="/Images/ice-cream-home-button2.png" alt="ice cream symbol" height="22px"/></a></li>
 
-                      <li class="dropdown yamm"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Flavors </a>
+                      <li class="dropdown yamm"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Flavors <i class="fa fa-chevron-down"></i></a>
 	<ul class="dropdown-menu">
         <li><a href="~/Flavors.aspx" runat="server">Flavors</a></li>
 		<li><a href="~/NewFlavor.aspx" runat="server">Suggest New Flavor</a></li>
@@ -111,19 +112,38 @@
 
 <li><a href="~/SingleOrder.aspx" runat="server">Your Order</a></li>
 
-                      <asp:LoginView ID="LoginView1" runat="server">
-                      <LoggedInTemplate>
-<li class="dropdown yamm"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Admin </a>
-	<ul class="dropdown-menu">
-		<li><a href="/Admin/AdminNewFlavor.aspx" runat="server">New Flavor Ideas</a></li>
-		<li><a href="/Admin/ContactResponses.aspx" runat="server">Contact Responses</a></li>
-		<li><a href="/Admin/ManageRoles.aspx" runat="server">Manage Roles</a></li>
-        <li><a href="/Account/Profile.aspx" runat="server">Update Profile</a></li>
-        <li><a href="/Admin/Users.aspx">All Users</a></li>
+
+        <asp:LoginView ID="LoginView1" runat="server">
+          <AnonymousTemplate>
+             
+          </AnonymousTemplate>
+        <LoggedInTemplate>
+             <li class="dropdown yamm"><a class="dropdown-toggle" href="#" data-toggle="dropdown">User <i class="fa fa-chevron-down"></i></a>
+	            <ul class="dropdown-menu">
+                    <li><a href="/Account/Profile.aspx" runat="server">Update Profile</a></li>
+                </ul>
+            </li>
+        </LoggedInTemplate>
+        <RoleGroups>
+            <asp:RoleGroup Roles="Admin">
+                <ContentTemplate>
+                    <li class="dropdown yamm"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Admin <i class="fa fa-chevron-down"></i></a>
+	                    <ul class="dropdown-menu">
+                            <li><a href="/Admin/AdminNewFlavor.aspx" runat="server">New Flavor Ideas</a></li>
+		                    <li><a href="/Admin/ContactResponses.aspx" runat="server">Contact Responses</a></li>
+		                    <li><a href="/Admin/ManageRoles.aspx" runat="server">Manage Roles</a></li>
+                            <li><a href="/Admin/Users.aspx">All Users</a></li>
+                            <li><a href="/Account/Profile.aspx" runat="server">Update Profile</a></li>
+                        </ul>
+                    </li>
+                </ContentTemplate>
+            </asp:RoleGroup>
+        </RoleGroups>
+		
+        </asp:LoginView>
 	</ul>
 </li> 
-                      </LoggedInTemplate>
-                          </asp:LoginView>
+           
 
 <!-- <li><a href="/vendor-login.php">Vendor Login</a></li> --></ul>
                   <ul class="nav navbar-nav navbar-right"></ul>
