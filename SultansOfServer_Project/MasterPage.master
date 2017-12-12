@@ -109,7 +109,12 @@
                      
 <li><a href="~/CafeMenu.aspx" runat="server">Creamery Cafe</a></li>
 
-<li><a href="~/Contact.aspx" runat="server">Contact Us</a></li>
+<li class="dropdown yamm"><a class="dropdown-toggle" data-toggle="dropdown" href="#" runat="server">Contact Us<i class="fa fa-chevron-down"></i></a>
+     <ul class="dropdown-menu">
+        <li><a href="~/Contact.aspx" runat="server">Contact Us</a></li>
+        <li><a href="~/PublicJobBoard.aspx" runat="server">Jobs</a></li>
+	</ul>
+</li>
 
 <li><a href="~/SingleOrder.aspx" runat="server">Your Order</a></li>
 

@@ -5,13 +5,12 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <div class="col-6-md">
 
-
+        <h3>Admin Job Board</h3>
     
     <asp:GridView ID="gvJobs" runat="server" AutoGenerateColumns="False" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" CellSpacing="2" DataKeyNames="Id" ForeColor="Black" AllowPaging="True" DataSourceID="SqlDataSource1" OnRowUpdating="GridView1_RowUpdating">
         <Columns>
-            <asp:CommandField ShowSelectButton="True"/>
-            <asp:BoundField DataField="jobName" HeaderText="jobName" SortExpression="jobName" />
-            <asp:BoundField DataField="jobDescription" HeaderText="jobDescription" SortExpression="jobDescription" />
+            <asp:BoundField DataField="jobName" HeaderText="Job Title" SortExpression="jobName" />
+            <asp:BoundField DataField="jobDescription" HeaderText="Job Description" SortExpression="jobDescription" />
             <asp:CommandField ShowEditButton="True"/>
             <asp:TemplateField ShowHeader="False">
                 <ItemTemplate>
@@ -32,19 +31,17 @@
 
     </div>
 
-<asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:5050_sultans_serverConnectionString %>" DeleteCommand="DELETE FROM [Jobs] WHERE [Id] = @Id" InsertCommand="INSERT INTO [Jobs] ([jobName], [jobDescription], [datePosted]) VALUES (@jobName, @jobDescription, @datePosted)" SelectCommand="SELECT [jobName], [jobDescription], [Id], [datePosted] FROM [Jobs]" UpdateCommand="UPDATE [Jobs] SET [jobName] = @jobName, [jobDescription] = @jobDescription, [datePosted] = @datePosted WHERE [Id] = @Id">
+<asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:5050_sultans_serverConnectionString %>" DeleteCommand="DELETE FROM [Jobs] WHERE [Id] = @Id" InsertCommand="INSERT INTO [Jobs] ([jobName], [jobDescription]) VALUES (@jobName, @jobDescription)" SelectCommand="SELECT * FROM [Jobs]" UpdateCommand="UPDATE [Jobs] SET [jobName] = @jobName, [jobDescription] = @jobDescription WHERE [Id] = @Id">
     <DeleteParameters>
         <asp:Parameter Name="Id" Type="Int32" />
     </DeleteParameters>
     <InsertParameters>
         <asp:Parameter Name="jobName" Type="String" />
         <asp:Parameter Name="jobDescription" Type="String" />
-        <asp:Parameter Name="datePosted" Type="DateTime" />
     </InsertParameters>
     <UpdateParameters>
         <asp:Parameter Name="jobName" Type="String" />
         <asp:Parameter Name="jobDescription" Type="String" />
-        <asp:Parameter Name="datePosted" Type="DateTime" />
         <asp:Parameter Name="Id" Type="Int32" />
     </UpdateParameters>
 </asp:SqlDataSource>

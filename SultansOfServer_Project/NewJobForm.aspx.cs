@@ -9,10 +9,11 @@ using System.Web.UI.WebControls;
 public partial class NewJobForm : System.Web.UI.Page
 {
 
-
+   
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        LinkButton1.Visible = false;
+        LinkButton2.Visible = false;
     }
 
     protected void btnContactSubmit_Click(object sender, EventArgs e)
@@ -33,7 +34,10 @@ public partial class NewJobForm : System.Web.UI.Page
         {
             con.Open();
             added = cmd.ExecuteNonQuery(); //use for insert, update, delete commands
-            lblContactSubmit.Text = "Job added successfully";
+            LinkButton1.Visible = true;
+            LinkButton2.Visible = true;
+            lblContactSubmit.Text = "Job added successfully!";
+            
         }
         catch (Exception err)
         {
@@ -46,7 +50,9 @@ public partial class NewJobForm : System.Web.UI.Page
         }
 
         Panel1.Visible = false;
-        LinkButton1.Visible = true;
+        
+       
+       
         
     }
 
