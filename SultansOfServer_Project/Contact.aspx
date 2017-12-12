@@ -4,7 +4,7 @@
     <title>Contact Us</title>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
- <div class="row"></div>
+
     <h1 class="underlined">Contact Us</h1> <br />
     
     <asp:Panel ID="Panel1" runat="server">

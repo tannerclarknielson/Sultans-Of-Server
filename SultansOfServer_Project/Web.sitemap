@@ -1,17 +1,35 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
   <siteMapNode url="~/Default.aspx" title="Home"  description="Home">
+    
     <siteMapNode url="" title="Flavors"  description="Flavors">
-      <siteMapNode url="~Flavors.aspx" title="Flavors" description="Flavors" />
+      <siteMapNode url="~/Flavors.aspx" title="Flavors" description="Flavors" />
       <siteMapNode url="~/NewFlavor.aspx" title="New Flavor"  description="New Flavor" />
       <siteMapNode url="~/FlavorVoting.aspx" title="Flavor Voting" description="Flavor Voting" />
     </siteMapNode>
+    
     <siteMapNode url="~/CafeMenu.aspx" title="Creamery Cafe" description="Creamery Cafe" />
-    <siteMapNode url="~/Contact.aspx" title="Contact Us" description="Contact Us" />
+    
+    <siteMapNode url="" title="Contact Us" description="Contact Us">
+      <siteMapNode url="~/Contact.aspx" title="Contact Us" description="Contact Us" />
+      <siteMapNode url="~/PublicJobBoard.aspx" title="Jobs" description="Jobs">
+        <siteMapNode url="~/ApplicationForm.aspx" title="Application Form" description="Application Form" />
+      </siteMapNode>
+    </siteMapNode>
+    
     <siteMapNode url="~/SingleOrder.aspx" title="Your Order" description="Your Order" />
-    <siteMapNode url="" title="" description="" />
-    <siteMapNode url="" title="" description="" />
-    <siteMapNode url="" title="" description="" />
+    <siteMapNode url="" title="Admin" description="Admin">
+      <siteMapNode url="~/Admin/AdminNewFlavor.aspx" title="Admin New Flavor" description="Admin New Flavor" />
+      <siteMapNode url="~/Admin/ContactResponses.aspx" title="Contact Responses" description="Contact Responses" />
+      <siteMapNode url="~/Admin/ManageRoles.aspx" title="Manage Roles" description="Manage Roles" />
+      <siteMapNode url="~/Admin/Users.aspx" title="All Users" description="All Users" />
+    </siteMapNode>
+
+    <siteMapNode url="" title="Account" description="Account">
+      <siteMapNode url="~/Account/Login.aspx" title="Login" description="Login" />
+      <siteMapNode url="~/Account/Register.aspx" title="Register" description="Register" />
+      <siteMapNode url="~/Account/Profile.aspx" title="Update Profile" description="Update Profile" />
+    </siteMapNode>
   </siteMapNode>
 </siteMap>
 

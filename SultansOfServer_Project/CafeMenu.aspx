@@ -4,8 +4,9 @@
     <title>Cafe Menu</title>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+    <h1 class="underlined">Creamery Cafe </h1>
     <div class="row">
-        <h1 class="underlined">Creamery Cafe </h1>
+        
              <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:5050_sultans_serverConnectionString %>" SelectCommand="SELECT [prod_id], [prod_name], [prod_price], [prod_image] FROM [cafemenu] WHERE ([isicecream] = @isicecream)">
                  <SelectParameters>
                      <asp:Parameter DefaultValue="0" Name="isicecream" Type="Int32" />
@@ -16,21 +17,9 @@
         <LayoutTemplate>
             <div class="row">
                 <div runat="server" id="itemPlaceHolder"></div>
-            </div>
-
-           <%--<table>
-               <tr id="groupPlaceHolder" runat="server"></tr>
-               <tr>
-                   <td> </td>
-               </tr>
-           </table>--%>
-               
+            </div> 
         </LayoutTemplate>
-       <%-- <GroupTemplate>
-                    <tr>
-                        <td id="itemPlaceHolder" runat="server"></td>
-                    </tr>
-                </GroupTemplate>--%>
+       
         <ItemTemplate>
             <div class="col-sm-4 col-xs-6">
                 <div class="row">
@@ -53,14 +42,7 @@
             <asp:HiddenField ID="hf_price" runat="server" Value='<%# Eval("prod_price") %>'/>
             
         </ItemTemplate>
-
     </asp:ListView>
-        
-
-       
     </div>
-   
-
-
 </asp:Content>
 

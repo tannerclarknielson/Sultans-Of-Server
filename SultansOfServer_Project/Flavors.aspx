@@ -31,6 +31,7 @@
         
 </asp:ListView>
      
-            <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/SingleOrder.aspx">View Cart</asp:HyperLink>
-       
+<asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/SingleOrder.aspx">View Cart</asp:HyperLink>
+ 
+<br />
 </asp:Content>
