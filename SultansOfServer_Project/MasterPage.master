@@ -102,6 +102,7 @@
 	<ul class="dropdown-menu">
         <li><a href="~/Flavors.aspx" runat="server">Flavors</a></li>
 		<li><a href="~/NewFlavor.aspx" runat="server">Suggest New Flavor</a></li>
+        <li><a href="~/FlavorVoting.aspx">Vote On Flavors</a></li>
 		
 	</ul>
 </li> 
