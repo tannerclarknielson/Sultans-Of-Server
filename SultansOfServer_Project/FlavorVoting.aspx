@@ -8,6 +8,8 @@
     <asp:Panel ID="Panel1" runat="server">
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:5050_sultans_serverConnectionString %>" SelectCommand="SELECT [Flavor] FROM [Flavors]"></asp:SqlDataSource>
         <asp:RadioButtonList ID="RadioButtonList1" runat="server" DataSourceID="SqlDataSource1" DataTextField="Flavor" DataValueField="Flavor"></asp:RadioButtonList>
+            <asp:RequiredFieldValidator runat="server" ControlToValidate="RadioButtonList1" ErrorMessage="Flavor selection required" forecolor="red"></asp:RequiredFieldValidator>
+        <br />
         <asp:Button ID="Button1" runat="server" Text="Vote" OnClick="Button1_Click1" />
     </asp:Panel>
     <asp:Panel ID="Panel2" runat="server">
