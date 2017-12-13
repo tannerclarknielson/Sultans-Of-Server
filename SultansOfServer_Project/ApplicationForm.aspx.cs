@@ -15,8 +15,8 @@ public partial class ApplicationForm : System.Web.UI.Page
     }
     protected void btnSubmit_Click(object sender, EventArgs e)
     {
-        string insertSQL = "INSERT INTO Applications (app_firstname, app_lastname, app_email, app_phone, app_gender, app_employmentHistory)";
-        insertSQL += "VALUES (@app_firstname, @app_lastname, @app_email, @app_phone, @app_gender, @app_employmentHistory)";
+        string insertSQL = "INSERT INTO Applications (app_firstname, app_lastname, app_email, app_phone/* app_gender*/, app_employmentHistory)";
+        insertSQL += "VALUES (@app_firstname, @app_lastname, @app_email, @app_phone, /*@app_gender*/ @app_employmentHistory)";
 
         SqlConnection con = new SqlConnection("Data Source=stairway.usu.edu; Initial Catalog=5050_sultans_server;User ID=5050_sultans_server; Password=aggieicecream");
         SqlCommand cmd = new SqlCommand(insertSQL, con);
@@ -28,7 +28,7 @@ public partial class ApplicationForm : System.Web.UI.Page
         cmd.Parameters.AddWithValue("@app_email", txtEmail.Text);
         cmd.Parameters.AddWithValue("@app_employmentHistory", txtEmploymentHistory.Text);
         cmd.Parameters.AddWithValue("@app_phone", txtPhoneNumber.Text);
-        cmd.Parameters.AddWithValue("@app_gender", rblGender.SelectedIndex);
+        //cmd.Parameters.AddWithValue("@app_gender", ddlGender.SelectedIndex);
         int added = 0;
         try
         {

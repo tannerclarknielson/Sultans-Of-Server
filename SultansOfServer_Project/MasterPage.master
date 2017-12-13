@@ -41,6 +41,10 @@
       		
       		<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
       		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+
+       <!--Custom CSS for the girdview tables-->
+       <link href="custom.css" rel="stylesheet" />
+
       		
       		<!-- This is the sites headCode -->
 <!-- please don't remove, not pushed to production -->

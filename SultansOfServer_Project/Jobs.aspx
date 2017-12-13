@@ -5,9 +5,10 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <div class="col-6-md">
 
-        <h3>Admin Job Board</h3>
+         <h1 class="underlined">Active Job Posts</h1> <br />
     
-    <asp:GridView ID="gvJobs" runat="server" AutoGenerateColumns="False" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" CellSpacing="2" DataKeyNames="Id" ForeColor="Black" AllowPaging="True" DataSourceID="SqlDataSource1" OnRowUpdating="GridView1_RowUpdating">
+    <asp:GridView ID="gvJobs" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="Id" ForeColor="#333333" AllowPaging="True" DataSourceID="SqlDataSource1" OnRowUpdating="GridView1_RowUpdating">
+        <AlternatingRowStyle BackColor="White" />
         <Columns>
             <asp:BoundField DataField="jobName" HeaderText="Job Title" SortExpression="jobName" />
             <asp:BoundField DataField="jobDescription" HeaderText="Job Description" SortExpression="jobDescription" />
@@ -18,30 +19,33 @@
                 </ItemTemplate>
             </asp:TemplateField>
         </Columns>
-        <FooterStyle BackColor="#CCCCCC" />
-        <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
-        <PagerStyle BackColor="#CCCCCC" ForeColor="Black" HorizontalAlign="Left" />
-        <RowStyle BackColor="White" />
-        <SelectedRowStyle BackColor="#000099" Font-Bold="True" ForeColor="White" />
-        <SortedAscendingCellStyle BackColor="#F1F1F1" />
-        <SortedAscendingHeaderStyle BackColor="#808080" />
-        <SortedDescendingCellStyle BackColor="#CAC9C9" />
-        <SortedDescendingHeaderStyle BackColor="#383838" />
+        <EditRowStyle BackColor="#99CCFF" />
+        <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+        <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+        <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
+        <RowStyle BackColor="#EFF3FB" />
+        <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
+        <SortedAscendingCellStyle BackColor="#F5F7FB" />
+        <SortedAscendingHeaderStyle BackColor="#6D95E1" />
+        <SortedDescendingCellStyle BackColor="#E9EBEF" />
+        <SortedDescendingHeaderStyle BackColor="#4870BE" />
     </asp:GridView>
 
     </div>
 
-<asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:5050_sultans_serverConnectionString %>" DeleteCommand="DELETE FROM [Jobs] WHERE [Id] = @Id" InsertCommand="INSERT INTO [Jobs] ([jobName], [jobDescription]) VALUES (@jobName, @jobDescription)" SelectCommand="SELECT * FROM [Jobs]" UpdateCommand="UPDATE [Jobs] SET [jobName] = @jobName, [jobDescription] = @jobDescription WHERE [Id] = @Id">
+<asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:5050_sultans_serverConnectionString %>" DeleteCommand="DELETE FROM [Jobs] WHERE [Id] = @Id" InsertCommand="INSERT INTO [Jobs] ([jobName], [jobDescription], [datePosted]) VALUES (@jobName, @jobDescription, @datePosted)" SelectCommand="SELECT * FROM [Jobs]" UpdateCommand="UPDATE [Jobs] SET [jobName] = @jobName, [jobDescription] = @jobDescription, [datePosted] = @datePosted WHERE [Id] = @Id">
     <DeleteParameters>
         <asp:Parameter Name="Id" Type="Int32" />
     </DeleteParameters>
     <InsertParameters>
         <asp:Parameter Name="jobName" Type="String" />
         <asp:Parameter Name="jobDescription" Type="String" />
+        <asp:Parameter Name="datePosted" Type="Object" />
     </InsertParameters>
     <UpdateParameters>
         <asp:Parameter Name="jobName" Type="String" />
         <asp:Parameter Name="jobDescription" Type="String" />
+        <asp:Parameter Name="datePosted" Type="Object" />
         <asp:Parameter Name="Id" Type="Int32" />
     </UpdateParameters>
 </asp:SqlDataSource>

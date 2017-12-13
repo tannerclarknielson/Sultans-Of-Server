@@ -20,14 +20,15 @@
     <asp:RequiredFieldValidator ID="RequiredFieldValidator3" ControlToValidate="txtLN" ForeColor="Red" runat="server" ErrorMessage="*Enter Last Name"></asp:RequiredFieldValidator>
 
 
-    <h2><asp:Label ID="lblGender" runat="server" Text="Gender"></asp:Label></h2>
-        <asp:RadioButtonList ID="rblGender" runat="server">
-            <asp:ListItem>Male</asp:ListItem>
-            <asp:ListItem>Female</asp:ListItem>
-            <asp:ListItem>Prefer Not to Disclose</asp:ListItem>
-        </asp:RadioButtonList>
+   <%-- <h2><asp:Label ID="lblGender" runat="server" Text="Gender"></asp:Label></h2>
+        <asp:DropDownList ID="ddlGender" runat="server">
 
-        <asp:RequiredFieldValidator ID="RequiredFieldValidator4" ControlToValidate="rblGender" ForeColor="Red" runat="server" ErrorMessage="*Select one"></asp:RequiredFieldValidator>
+            <asp:ListItem Value="Male">Male</asp:ListItem>
+            <asp:ListItem Value="Female">Female</asp:ListItem>
+            <asp:ListItem Value="NotDisclose">Prefer not to Disclose</asp:ListItem>
+        </asp:DropDownList>
+
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator4" ControlToValidate="ddlGender" ForeColor="Red" runat="server" ErrorMessage="*Select one"></asp:RequiredFieldValidator>--%>
 
 
     <h2><asp:Label ID="lblEmail" runat="server" Text="Email"></asp:Label></h2>
