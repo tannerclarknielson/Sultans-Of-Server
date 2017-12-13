@@ -41,6 +41,10 @@
       		
       		<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
       		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+
+       <!--Custom CSS for the girdview tables-->
+       <link href="custom.css" rel="stylesheet" />
+
       		
       		<!-- This is the sites headCode -->
 <!-- please don't remove, not pushed to production -->
@@ -140,6 +144,9 @@
 		                    <li><a href="/Admin/ManageRoles.aspx" runat="server">Manage Roles</a></li>
                             <li><a href="/Admin/Users.aspx">All Users</a></li>
                             <li><a href="/Account/Profile.aspx" runat="server">Update Profile</a></li>
+                            <li><a href="/Admin/AdminPendingApplications.aspx" runat="server">Pending Applications</a></li>
+                            <li><a href="/Admin/Jobs.aspx" runat="server">Active Job Posts</a></li>
+                            <li><a href="/Admin/NewJobForm.aspx" runat="server">Add new job</a></li>
                         </ul>
                     </li>
                 </ContentTemplate>
