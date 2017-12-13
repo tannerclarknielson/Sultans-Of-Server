@@ -1,10 +1,21 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="CafeMenu.aspx.cs" Inherits="CafeMenu" %>
 
+<%@ Register Src="~/UserControl.ascx" TagPrefix="uc1" TagName="UserControl" %>
+
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
     <title>Cafe Menu</title>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-    <h1 class="underlined">Creamery Cafe </h1>
+    <div class="row">
+        <div class="col-sm-10 col-xs-6">
+            <h1 class="underlined">Creamery Cafe</h1>
+        </div>
+        <div class="col-sm-2 col-xs-6">
+            <uc1:UserControl runat="server" ID="UserControl" />
+        </div>
+    </div>
+    
     <div class="row">
         
              <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:5050_sultans_serverConnectionString %>" SelectCommand="SELECT [prod_id], [prod_name], [prod_price], [prod_image] FROM [cafemenu] WHERE ([isicecream] = @isicecream)">

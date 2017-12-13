@@ -1,11 +1,22 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="Flavors.aspx.cs" Inherits="Flavors" %>
 
+<%@ Register Src="~/UserControl.ascx" TagPrefix="uc1" TagName="UserControl" %>
+
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
     <title>Flavors</title>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-    <h1>Flavors</h1>
+    <div class="row">
+        <div class="col-sm-10 col-xs-6">
+            <h1 class="underlined">Flavors</h1>
+        </div>
+        <div class="col-sm-2 col-xs-6">
+            <uc1:UserControl runat="server" ID="UserControl" />
+        </div>
+    </div>
+    
 <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:5050_sultans_serverConnectionString %>" SelectCommand="SELECT [FlavorID], [Flavor], [Ingredients], [ImagePath], [OneScoop] FROM [Flavors]"></asp:SqlDataSource>
    
 <asp:ListView ID="ListView1" runat="server" DataSourceID="SqlDataSource1" DataKeyNames="FlavorID" OnSelectedIndexChanged="ListView1_SelectedIndexChanged1">
@@ -31,7 +42,7 @@
         
 </asp:ListView>
      
-<asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/SingleOrder.aspx">View Cart</asp:HyperLink>
+    
  
 <br />
 </asp:Content>
