@@ -41,10 +41,6 @@
       		
       		<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
       		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
-
-       <!--Custom CSS for the girdview tables-->
-       <link href="custom.css" rel="stylesheet" />
-
       		
       		<!-- This is the sites headCode -->
 <!-- please don't remove, not pushed to production -->
@@ -128,7 +124,7 @@
              
           </AnonymousTemplate>
         <LoggedInTemplate>
-             <li class="dropdown yamm"><a class="dropdown-toggle" href="#" data-toggle="dropdown">User <i class="fa fa-chevron-down"></i></a>
+             <li class="dropdown yamm"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Employee <i class="fa fa-chevron-down"></i></a>
 	            <ul class="dropdown-menu">
                     <li><a href="/Account/Profile.aspx" runat="server">Update Profile</a></li>
                 </ul>

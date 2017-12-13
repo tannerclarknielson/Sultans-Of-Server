@@ -17,9 +17,13 @@
         </div>
     </div>
     
-<asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:5050_sultans_serverConnectionString %>" SelectCommand="SELECT [FlavorID], [Flavor], [Ingredients], [ImagePath], [OneScoop] FROM [Flavors]"></asp:SqlDataSource>
+<asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:5050_sultans_serverConnectionString %>" SelectCommand="SELECT * FROM [cafemenu] WHERE ([isicecream] = @isicecream)">
+    <SelectParameters>
+        <asp:Parameter DefaultValue="1" Name="isicecream" Type="Int32" />
+    </SelectParameters>
+    </asp:SqlDataSource>
    
-<asp:ListView ID="ListView1" runat="server" DataSourceID="SqlDataSource1" DataKeyNames="FlavorID" OnSelectedIndexChanged="ListView1_SelectedIndexChanged1">
+<asp:ListView ID="ListView1" runat="server" DataSourceID="SqlDataSource1" DataKeyNames="prod_id" OnSelectedIndexChanged="ListView1_SelectedIndexChanged1">
     
         <LayoutTemplate>
             <div class="row">
@@ -29,15 +33,15 @@
             
         <ItemTemplate>
             <div class="col-sm-4">
-                <asp:Image ID="Image1" runat="server" ImageUrl='<%# Eval("ImagePath", "/Flavors/{0}") %>' />
-                <h2><%# Eval("Flavor") %> - <%# Eval("OneScoop" , "{0:c}") %></h2>
-                <p>Ingredients: <%# Eval("Ingredients") %></p>
+                <asp:Image ID="Image1" runat="server" ImageUrl='<%# Eval("prod_image", "/Flavors/{0}") %>' />
+                <h2><%# Eval("prod_name") %> - <%# Eval("prod_price" , "{0:c}") %></h2>
+                <p>Ingredients: <%# Eval("ingredients") %></p>
                 <asp:Button ID="Button1" runat="server" Text="Add to Cart" CommandName="Select"/>
             </div>
 
-            <asp:HiddenField ID="flavor_id" runat="server" Value='<%# Eval("FlavorID") %>'/>
-            <asp:HiddenField ID="flavor_name" runat="server" Value='<%# Eval("Flavor") %>'/>
-            <asp:HiddenField ID="scoop_price" runat="server" Value='<%# Eval("OneScoop") %>'/>
+            <asp:HiddenField ID="flavor_id" runat="server" Value='<%# Eval("prod_id") %>'/>
+            <asp:HiddenField ID="flavor_name" runat="server" Value='<%# Eval("prod_name") %>'/>
+            <asp:HiddenField ID="scoop_price" runat="server" Value='<%# Eval("prod_price") %>'/>
         </ItemTemplate>
         
 </asp:ListView>
